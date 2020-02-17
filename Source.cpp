@@ -13,6 +13,8 @@ void Umink() {
 	vector <Neuron> InLayer(784);
 	vector <Neuron> OutLayer(10);
 
+	
+
 	for (int i = 0; i < 10000; ++i) {
 		
 		int DesiredNumber = i % 10;
@@ -27,7 +29,25 @@ void Umink() {
 			Calculations(InLayer, OutLayer, DesiredNumber);
 			
 	}
-	cout << "YEBAT";
+	
+	MnistClose();
+	int NumbOfCorrectAns = 0;
+
+	for (int i = 0; i < 10000; ++i) {
+
+		int DesiredNumber = i % 10;
+
+		for (int j = 0; j < InLayer.size(); ++j)
+			InLayer[j].NewNumber(DesiredNumber);
+
+		for (int j = 0; j < 10; ++j)
+			OutLayer[j].Multiplication(InLayer, j);
+
+		if (DesiredNumber == Answer(OutLayer))
+			NumbOfCorrectAns++;
+
+	}
+	cout << NumbOfCorrectAns / 100;
 }
 
 void Test() {

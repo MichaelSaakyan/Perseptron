@@ -21,9 +21,4 @@ int Answer(vector <Neuron> & OutLayer) {
 
 	return Answer;
 }
-
-double Sigmoid(double & x) {
-	return 1 / (1 + exp(-x));
-}
-
 #endif // !FUNCTIONS_H

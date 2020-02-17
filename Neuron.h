@@ -5,9 +5,13 @@
 #include <iostream>
 #include <vector>
 #include "MnistReader.h"
-#include "Functions.h"
 
 using namespace std;
+
+double Sigmoid(double & x) {
+	return 1 / (1 + exp(-x));
+}
+
 
 class Neuron {
 public:

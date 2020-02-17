@@ -23,12 +23,11 @@ void Umink() {
 		for (int j = 0; j < 10; ++j)
 			OutLayer[j].Multiplication(InLayer, j);
 		
-		if (DesiredNumber != Answer(OutLayer)) {
+		if (DesiredNumber != Answer(OutLayer)) 
+			Calculations(InLayer, OutLayer, DesiredNumber);
 			
-		}
 	}
-
-
+	cout << "YEBAT";
 }
 
 void Test() {

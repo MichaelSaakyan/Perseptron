@@ -4,16 +4,14 @@
 #include <math.h>
 #include <fstream>
 #include "Neuron.h"
-#include "Functions.h"
 #include "Training.h"
+#include "Functions.h"
 
 using namespace std;
 
 void Umink() {
 	vector <Neuron> InLayer(784);
 	vector <Neuron> OutLayer(10);
-
-	
 
 	for (int i = 0; i < 10000; ++i) {
 		
@@ -70,3 +68,17 @@ int main() {
 	Umink();
 	return 0;
 }
+//
+//int Answer(vector <Neuron> & OutLayer) {
+//	int Answer;
+//	double MaxValue = -1;
+//
+//	for (int i = 0; i < OutLayer.size(); ++i) {
+//		if (OutLayer[i].value > MaxValue) {
+//			MaxValue = OutLayer[i].value;
+//			Answer = i;
+//		}
+//	}
+//
+//	return Answer;
+//}

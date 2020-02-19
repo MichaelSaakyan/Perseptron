@@ -49,36 +49,27 @@ void Umink() {
 }
 
 void Test() {
-	ifstream picture("data1", ios_base::binary);
-	for (int i = 0; i < 784; ++i) {
-		unsigned char temp = 0;
-		picture.read((char*)&temp, sizeof(temp));
-		if ((int)temp != 0) cout << "0";
-		else cout << ' ';
-		if (i % 28 == 0) cout << "\n";
-	}
-	picture.close();
+	//cout << summ(5, 6);
 }
 
 int main() {
 	freopen("result.out", "w", stdout);
 
-	//Test();
+	/*Test();*/
 
 	Umink();
 	return 0;
 }
-//
-//int Answer(vector <Neuron> & OutLayer) {
-//	int Answer;
-//	double MaxValue = -1;
-//
-//	for (int i = 0; i < OutLayer.size(); ++i) {
-//		if (OutLayer[i].value > MaxValue) {
-//			MaxValue = OutLayer[i].value;
-//			Answer = i;
-//		}
-//	}
-//
-//	return Answer;
-//}
+int Answer(vector <Neuron> & OutLayer) {
+	int Answer;
+	double MaxValue = -1;
+
+	for (int i = 0; i < OutLayer.size(); ++i) {
+		if (OutLayer[i].value > MaxValue) {
+			MaxValue = OutLayer[i].value;
+			Answer = i;
+		}
+	}
+
+	return Answer;
+}

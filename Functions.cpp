@@ -1,4 +1,5 @@
 #include "Functions.h"
+#include <iostream>
 
 using namespace std;
 
@@ -14,4 +15,9 @@ int Answer(vector <Neuron> & OutLayer) {
 	}
 
 	return Answer;
+}
+
+int summ(int x, int y) {
+	int z = x + y;
+	return z;
 }

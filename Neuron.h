@@ -16,6 +16,8 @@ public:
 	Neuron();
 	
 	void NewNumber(double & TempValue);
+
+
 };
 
 #endif // !NEURON_H

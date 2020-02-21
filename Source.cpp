@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
-#include <fstream>
 
 #include "Neuron.h"
 #include "MnistReader.h"
@@ -24,7 +23,7 @@ void Umink() {
 		}
 
 	}
-	cout << DesiredNumber;
+	
 }
 
 void Test() {

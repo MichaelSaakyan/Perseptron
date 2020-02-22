@@ -1,5 +1,5 @@
-#ifndef MnistReader_H
-#define MnistReader_H
+#ifndef MNISTREADER_H
+#define MNISTREADER_H
 
 #include <iostream>
 #include <fstream>
@@ -21,4 +21,4 @@ double MnistReader(int & DesiredNumber);
 
 void MnistClose();
 
-#endif
+#endif // !MNISTREADER_H

@@ -15,26 +15,7 @@ void Umink() {
 	int DesiredNumber;
 	double TempValue;
 
-	for (int k = 0; k < 10; ++k) {
-		for (int j = 0; j < 10000; ++j) {
-			DesiredNumber = j % 10;
-
-			for (int i = 0; i < InLayer.size(); ++i) {
-				TempValue = MnistReader(DesiredNumber);
-				InLayer[i].NewNumber(TempValue);
-			}
-
-			OutLayer OutLayer(InLayer);
-
-			if (DesiredNumber != OutLayer.Answer())
-				OutLayer.Calculations(DesiredNumber, InLayer);
-		}
-
-		MnistClose();
-	}
-	int t = 0;
-
-	for (int j = 0; j < 10000; ++j) {
+	for (int j = 0; j < 100; ++j) {
 		DesiredNumber = j % 10;
 
 		for (int i = 0; i < InLayer.size(); ++i) {
@@ -44,12 +25,28 @@ void Umink() {
 
 		OutLayer OutLayer(InLayer);
 
-		cout << OutLayer.Answer() << ' ';
+		if (DesiredNumber != OutLayer.Answer())
+			OutLayer.Calculations(DesiredNumber, InLayer);
+	}
+
+	int Temp = 0;
+
+	for (int j = 0; j < 1000; ++j) {
+		DesiredNumber = j % 10;
+
+		for (int i = 0; i < InLayer.size(); ++i) {
+			TempValue = MnistReader(DesiredNumber);
+			InLayer[i].NewNumber(TempValue);
+		}
+
+		OutLayer OutLayer(InLayer);
 
 		if (DesiredNumber != OutLayer.Answer())
-			t++;
+			Temp++;
 	}
-	cout << t;
+
+	cout << (1000 - Temp) / 10;
+	MnistClose();
 }
 
 void Test() {
